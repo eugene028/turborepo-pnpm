@@ -1,22 +1,30 @@
 {
   "name": "@eugene02876/wow-ui",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "type": "module",
+  "license": "MIT",
   "files": [
-    "/dist"
+    "dist", "src"
   ],
+  "exports":{
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "build:ts": "tsc --emitDeclarationOnly"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "eugene028",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.3",
     "@rollup/plugin-babel": "^6.0.4",
